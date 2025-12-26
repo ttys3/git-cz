@@ -262,7 +262,7 @@ impl Command for ChangelogCommand {
         match helper.find_last_version(rev)? {
             Some(last_version) => {
                 let semver = Version::from_str(rev.trim_start_matches(&self.prefix));
-                let from_rev = if let Ok(ref semver) = &semver {
+                let from_rev = if let Ok(semver) = &semver {
                     if helper.same_commit(rev, last_version.tag.as_str()) {
                         Rev(last_version.tag.as_str(), Some(semver))
                     } else {
