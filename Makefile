@@ -14,7 +14,7 @@ darwin: export CC=o64-clang
 darwin: export CXX=o64-clang++
 darwin: export LIBZ_SYS_STATIC=1
 darwin:
-	PATH=/usr/local/darwin-ndk-x86_64/bin:$$PATH \
+	PATH=$(HOME)/sdk/MacOSX27/bin:$$PATH \
 		 cargo build --target=x86_64-apple-darwin --release
 
 windows:
